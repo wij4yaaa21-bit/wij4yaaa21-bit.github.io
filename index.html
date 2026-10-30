@@ -189,6 +189,12 @@
             .tool-btn { padding: 6px 8px; font-size: 0.85em;}
         }
     </style>
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="NotA-di">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
 
@@ -1454,6 +1460,11 @@
                 }
             }
         }, 10000); 
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(e => console.error(e)));
+        }
     </script>
 </body>
 </html>
